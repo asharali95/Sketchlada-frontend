@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import socket from "../../socket";
 
 const Dashboard = () => {
-    return (
-        <div>
-            <h1>Dashboard</h1>
-        </div>
-    )
-}
+  useEffect(() => {
+    //CDM
+    socket.connect();
+  }, []);
+  return (
+    <div>
+      <h1>Dashboard</h1>
+    </div>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
