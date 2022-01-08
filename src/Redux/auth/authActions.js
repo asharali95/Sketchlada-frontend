@@ -6,16 +6,20 @@ export const signup =
   async (dispatch) => {
     try {
       var {
-        data: {
-          data: { user } = {},
-        },
-      } = await axios.post(`/auth/signup`, { username: name, email, password, passwordConfirm, role  });
+        data: { data: { user } = {} },
+      } = await axios.post(`/auth/signup`, {
+        username: name,
+        email,
+        password,
+        passwordConfirm,
+        role,
+      });
       dispatch({
         type: authConstants.SET_USER,
         payload: {
-          user
-        }
-      })
+          user,
+        },
+      });
     } catch (error) {
       console.log(error.response.data.error);
     }
@@ -26,17 +30,21 @@ export const login =
   async (dispatch) => {
     try {
       var {
-        data: {
-          data: { user } = {},
-        },
+        data: { data: { user } = {} },
       } = await axios.post(`/auth/login`, { email, password });
       dispatch({
         type: authConstants.SET_USER,
         payload: {
-          user
-        }
-      })
+          user,
+        },
+      });
     } catch (error) {
       console.log(error);
     }
   };
+
+export const logout = () => async (dispatch) => {
+  dispatch({
+    type: authConstants.REMOVE_USER,
+  });
+};
