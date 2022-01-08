@@ -25,7 +25,6 @@ const ArtList = () => {
         },
       } = await axios.get("/arts");
       setArts([...arts]);
-      console.log(arts);
     } catch (error) {
       console.log(error);
     }
