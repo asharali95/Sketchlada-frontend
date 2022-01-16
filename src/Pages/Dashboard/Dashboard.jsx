@@ -8,8 +8,14 @@ const Dashboard = ({ user }) => {
     socket.on("notification", (data) => {
       console.log(data);
     });
+    socket.connect();
+    socket.on("message", (data) => {
+      console.log(data);
+    });
     return () => {
       socket.disconnect();
+      socket.off("notification");
+      socket.off("message");
     };
   }, []);
 
