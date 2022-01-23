@@ -1,0 +1,21 @@
+.Home {
+  height: calc(100vh-var(--navbar-height));
+}
+.home-slider {
+  height: 50%;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divleft {
+  flex: 1;
+  transform: translateY(-100px) translateX(40px);
+}
+.divright {
+  flex: 1;
+}
+.carousel-root {
+  padding-top: 5px;
+}

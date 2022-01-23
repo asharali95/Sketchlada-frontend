@@ -1,9 +1,17 @@
 .navbar {
-    display: grid;
-    width: 100vw;
-    height: 8vh;
-    grid-template-columns: repeat(2,1fr);
-    background-color: aliceblue;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  width: 100vw;
+  height: var(--navbar-height);
+  grid-template-columns: repeat(2, 1fr);
+  /* background-color: rgb(46, 46, 46); */
+  justify-items: center;
+  align-items: center;
+}
+.logo {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/sketchlada-logo2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 20%;
 }

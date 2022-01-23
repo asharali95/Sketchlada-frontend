@@ -7,10 +7,12 @@ import Artists from "./Pages/Artists/Artists";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Art from "./Pages/Art/Art";
 import Navbar from "./Components/Navbar/Navbar";
+import NavbarMUI from "./MUI-Components/Navbar-MUI/NavbarMUI";
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <NavbarMUI />
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/auth" component={Auth} />

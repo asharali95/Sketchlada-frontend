@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import {logout} from './../../Redux/auth/authActions'
+import { logout } from "./../../Redux/auth/authActions";
 
 const Navbar = ({ user, logout }) => {
   return (
@@ -19,9 +19,7 @@ const Navbar = ({ user, logout }) => {
           </Link>
         )}
 
-        {
-            user._id && <button onClick={logout} >logout</button>
-        }
+        {user._id && <button onClick={logout}>logout</button>}
       </div>
     </div>
   );
@@ -32,7 +30,7 @@ var mapState = (state) => ({
 });
 
 var actions = {
-    logout
-}
+  logout,
+};
 
 export default connect(mapState, actions)(Navbar);
