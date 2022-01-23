@@ -7,6 +7,7 @@ import homepagepic2 from "../../assets/homepage2.png";
 import homepagepic3 from "../../assets/homepage3.png";
 import sketchladaLogo from "../../assets/sketchlada-logo2.png";
 import "./Home.css";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="Home">
@@ -14,7 +15,11 @@ const Home = () => {
         <div className="divleft">
           <img src={sketchladaLogo} style={{ maxWidth: "450px" }} alt="logo" />
           <h1>Collect Art by the world Leading Artists</h1>
-          <Button variant="outlined">Signup</Button>
+          <Link style={{ textDecoration: "none" }} to="/auth">
+            <Button variant="outlined" size="large" color="inherit">
+              Signup
+            </Button>
+          </Link>
         </div>
         <div className="divright">
           <Carousel autoPlay={true} infiniteLoop={true}>

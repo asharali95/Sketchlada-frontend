@@ -1,4 +1,5 @@
 import "./App.css";
+
 import { Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Auth from "./Pages/Auth/Auth";

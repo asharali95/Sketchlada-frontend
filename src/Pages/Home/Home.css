@@ -19,3 +19,6 @@
 .carousel-root {
   padding-top: 5px;
 }
+.thumbs-wrapper {
+  display: none;
+}
