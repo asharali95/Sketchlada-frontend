@@ -7,8 +7,10 @@ import Arts from "./Pages/Arts/Arts";
 import Artists from "./Pages/Artists/Artists";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Art from "./Pages/Art/Art";
-import Navbar from "./Components/Navbar/Navbar";
+// import Navbar from "./Components/Navbar/Navbar";
 import NavbarMUI from "./MUI-Components/Navbar-MUI/NavbarMUI";
+import Gallery from "./Pages/Gallery/Gallery";
+import Messages from "./Pages/Messages/Messages";
 function App() {
   return (
     <div>
@@ -21,6 +23,8 @@ function App() {
         <Route path="/arts/:artId" component={Art} />
         <Route path="/artists" component={Artists} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/gallery" component={Gallery} />
+        <Route path="/messages" component={Messages} />
       </Switch>
     </div>
   );

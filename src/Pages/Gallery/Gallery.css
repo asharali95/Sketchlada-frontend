@@ -1,0 +1,15 @@
+.gallery-slider {
+  display: flex;
+  height: 70%;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-left {
+  flex: 1;
+}
+slider-right {
+  flex: 1;
+}

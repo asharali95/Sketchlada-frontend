@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { getAllArts } from "../../Redux/test/artActions";
 import { Carousel } from "react-responsive-carousel";
 import Button from "@mui/material/Button";
 import homepagepic1 from "../../assets/homepage1.png";
@@ -8,16 +9,27 @@ import homepagepic3 from "../../assets/homepage3.png";
 import sketchladaLogo from "../../assets/sketchlada-logo2.png";
 import "./Home.css";
 import { Link } from "react-router-dom";
-const Home = () => {
+import { connect } from "react-redux";
+const Home = ({ getAllArts, user }) => {
+  useEffect(() => {
+    getAllArts();
+  });
   return (
     <div className="Home">
       <div className="home-slider flex">
         <div className="divleft">
           <img src={sketchladaLogo} style={{ maxWidth: "450px" }} alt="logo" />
           <h1>Collect Art by the world Leading Artists</h1>
-          <Link style={{ textDecoration: "none" }} to="/auth">
+          {user._id ? null : (
+            <Link style={{ textDecoration: "none" }} to="/auth">
+              <Button variant="outlined" size="large" color="inherit">
+                Signup
+              </Button>
+            </Link>
+          )}
+          <Link style={{ textDecoration: "none" }} to="/gallery">
             <Button variant="outlined" size="large" color="inherit">
-              Signup
+              View gallery
             </Button>
           </Link>
         </div>
@@ -33,4 +45,11 @@ const Home = () => {
   );
 };
 
-export default Home;
+var mapState = (state) => ({
+  user: state?.auth,
+});
+var actions = {
+  getAllArts,
+};
+
+export default connect(mapState, actions)(Home);

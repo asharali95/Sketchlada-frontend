@@ -13,8 +13,8 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import sketchladalogo from "../../assets/sketchlada-logo2.png";
 import { logout } from "../../Redux/auth/authActions";
-
-const pages = ["Gallery", "Arts", "Messages"];
+import history from "../../history";
+const pages = ["gallery", "arts", "messages"];
 
 const NavbarMUI = ({ user, logout }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,6 +38,10 @@ const NavbarMUI = ({ user, logout }) => {
           <Typography
             noWrap
             component="div"
+            onClick={(e) => {
+              e.preventDefault();
+              history.push("/");
+            }}
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
             <img src={sketchladalogo} style={{ maxWidth: "150px" }} />
@@ -88,13 +92,15 @@ const NavbarMUI = ({ user, logout }) => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link to={`/${page}`} style={{ textDecoration: "none" }}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "black", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 
@@ -107,7 +113,13 @@ const NavbarMUI = ({ user, logout }) => {
               </Link>
             ) : (
               <Link to="/auth" style={{ textDecoration: "none" }}>
-                <Button sx={{ my: 2, color: "black", display: "inline-block" }}>
+                <Button
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "inline-block",
+                  }}
+                >
                   Login
                 </Button>
               </Link>

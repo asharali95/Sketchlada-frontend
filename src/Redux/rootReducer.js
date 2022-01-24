@@ -1,16 +1,16 @@
 import { combineReducers } from "redux";
 import authReducer from "./auth/authReducer";
-import testReducer from "./test/testReducer";
+import artReducer from "./test/artReducer";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; //localStorage
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth", "cart"],
+  whitelist: ["auth", "art"],
 };
 const rootReducer = combineReducers({
-  test: testReducer,
+  art: artReducer,
   auth: authReducer,
 });
 
