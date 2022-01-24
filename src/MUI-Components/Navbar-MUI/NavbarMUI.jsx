@@ -9,33 +9,22 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import sketchladalogo from "../../assets/sketchlada-logo2.png";
 import { logout } from "../../Redux/auth/authActions";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Login", "Signup", "Dashboard", "Logout"];
+const pages = ["Gallery", "Arts", "Messages"];
 
 const NavbarMUI = ({ user, logout }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -112,16 +101,24 @@ const NavbarMUI = ({ user, logout }) => {
           <Box sx={{ flexGrow: 0 }}>
             {user._id ? (
               <Link to="/dashboard" style={{ textDecoration: "none" }}>
-                <Button sx={{ my: 2, color: "black", display: "block" }}>
+                <Button sx={{ my: 2, color: "black", display: "inline-block" }}>
                   Dashboard
                 </Button>
               </Link>
             ) : (
               <Link to="/auth" style={{ textDecoration: "none" }}>
-                <Button sx={{ my: 2, color: "black", display: "block" }}>
+                <Button sx={{ my: 2, color: "black", display: "inline-block" }}>
                   Login
                 </Button>
               </Link>
+            )}
+            {user._id && (
+              <Button
+                sx={{ my: 2, color: "black", display: "inline-block" }}
+                onClick={logout}
+              >
+                logout
+              </Button>
             )}
           </Box>
         </Toolbar>

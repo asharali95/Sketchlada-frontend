@@ -1,0 +1,13 @@
+.auth-container {
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup,
+.login {
+  flex: 1;
+}

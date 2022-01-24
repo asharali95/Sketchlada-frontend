@@ -1,5 +1,6 @@
 * {
   font-family: Roboto !important;
+  box-sizing: border-box;
 }
 :root {
   --navbar-height: 70px;

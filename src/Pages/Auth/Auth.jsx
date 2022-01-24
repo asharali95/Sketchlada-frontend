@@ -1,15 +1,20 @@
-import React from 'react'
-import LoginForm from '../../Components/LoginForm/LoginForm'
-import SignupForm from '../../Components/SignupForm/SignupForm'
-
+import React from "react";
+import SignupForm from "../../Components/SignupForm/SignupForm";
+import LoginFormMUI from "../../MUI-Components/LoginFormMUI/LoginFormMUI";
+import SignupFormMUI from "../../MUI-Components/SignupFormMUI/SignupFormMUI";
+import "./Auth.css";
 const Auth = () => {
-    return (
-        <div>
-            <h1>Auth</h1>
-            <SignupForm/>
-            <LoginForm/>
-        </div>
-    )
-}
+  return (
+    <div className="auth-container">
+      <div className="signup flex">
+        {/* <SignupForm /> */}
+        <SignupFormMUI />
+      </div>
+      <div className="login flex">
+        <LoginFormMUI />
+      </div>
+    </div>
+  );
+};
 
-export default Auth
+export default Auth;
