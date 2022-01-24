@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import socket from "../../socket";
 import { connect } from "react-redux";
+import "./Dashboard.css";
 const Dashboard = ({ user }) => {
   useEffect(() => {
     //CDM
@@ -23,8 +24,22 @@ const Dashboard = ({ user }) => {
     socket.emit("online", user.userId);
   }, [user]);
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="dashboard-container flex">
+      <h2
+        style={{
+          fontWeight: "400",
+          fontFamily: "Roboto",
+          paddingRight: "10px",
+          color: "#7da4a0",
+        }}
+      >
+        Hello Mr. {user?.username}
+      </h2>
+      <h1> Welcome to Dashboard</h1>
+      <p>
+        Sorry, dashboard UI is not ready! :( see <b>console</b> to recieve
+        message
+      </p>
     </div>
   );
 };

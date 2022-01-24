@@ -1,0 +1,84 @@
+.specific-art-container {
+  display: flex;
+  height: 100vh;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.specific-art-left {
+  flex: 1;
+}
+.specific-art-right {
+  flex: 1;
+}
+.main-heading {
+  width: 80%;
+  padding: 10px;
+  border-bottom: 0.1px solid rgb(201, 201, 201);
+}
+.main-heading > h1 {
+  color: rgb(112, 112, 112);
+  font-style: italic;
+}
+.main-heading > p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+#resolution {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgb(112, 112, 112);
+}
+.buyNow {
+  display: flex;
+  align-items: center;
+
+  width: 80%;
+  border-bottom: 0.1px solid rgb(201, 201, 201);
+}
+#buyNowBtn {
+  transform: translateX(40px);
+  width: 70%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 250ms ease-in-out;
+  margin-bottom: 70px;
+}
+#buyNowBtn:hover {
+  color: white;
+  background-color: black;
+}
+.otherInfo {
+  padding: 10px;
+  width: 70%;
+  flex-flow: columns;
+  justify-content: space-around !important;
+}
+.otherInfo h3 {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+.artistInfo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.artistInfo > h4 {
+  padding-left: 10px;
+  font-weight: 400;
+  color: rgb(112, 112, 112);
+}
+.artistImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-color: white; */
+  background-size: cover;
+}

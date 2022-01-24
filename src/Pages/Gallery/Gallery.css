@@ -13,3 +13,6 @@
 slider-right {
   flex: 1;
 }
+.gallery-container {
+  text-align: center;
+}

@@ -49,6 +49,7 @@ const SignupFormMUI = ({ signup }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           id="standard-basic"
+          type="password"
           label="Password"
           variant="standard"
         />
@@ -56,6 +57,7 @@ const SignupFormMUI = ({ signup }) => {
           id="standard-basic"
           label="Confirm Password"
           variant="standard"
+          type="password"
           value={passwordConfirm}
           onChange={(e) => setPasswordConfirm(e.target.value)}
         />

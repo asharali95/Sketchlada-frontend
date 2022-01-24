@@ -35,6 +35,7 @@ const LoginFormMUI = ({ login }) => {
           onChange={(e) => setPassword(e.target.value)}
           id="standard-basic"
           label="password"
+          type="password"
           variant="standard"
         />
         <Button type="submit" sx={{ my: 2, color: "black", display: "block" }}>

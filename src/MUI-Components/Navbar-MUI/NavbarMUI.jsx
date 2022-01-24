@@ -103,7 +103,20 @@ const NavbarMUI = ({ user, logout }) => {
               </Link>
             ))}
           </Box>
-
+          {user?._id ? (
+            <h3
+              style={{
+                fontWeight: "400",
+                fontFamily: "Roboto",
+                paddingRight: "10px",
+                color: "#7da4a0",
+              }}
+            >
+              Welcome <b>{user?.username}</b> !
+            </h3>
+          ) : (
+            ""
+          )}
           <Box sx={{ flexGrow: 0 }}>
             {user._id ? (
               <Link to="/dashboard" style={{ textDecoration: "none" }}>
